@@ -26,51 +26,7 @@ Prob1_df = tibble(
   vec_factor = factor(c("T", "F", "T", "F", "T", "F", "T", "T", "F", "F"))
 )
 
-## examine classes
-class(Prob1_df$vec_numeric)
-class(Prob1_df$vec_logical)
-class(Prob1_df$vec_char)
-class(Prob1_df$vec_factor)
-```
 
-Length of the vector shown below:
-```{r}
-## getting length
-length(Prob1_df$vec_char)
-length(Prob1_df$vec_factor)
-```
-
-2. When taking the mean of each variable, only vec_numeric works since it's the only numerical variable that could have take mean while vec_logical are logical values, vec_char are character values and vec_factor are factors values that can't take means.
-
-3. Transforming the varialbe type:
-Tranfoming to numerical variable:
-```{r}, eval = False
-as.numeric(Prob1_df$vec_logical)
-as.numeric(Prob1_df$vec_char)
-as.numeric(Prob1_df$vec_factor)
-```
-
-Converting character variable from character to factot to numeric:
-```{r}
-as.factor(Prob1_df$vec_char)
-as.numeric(Prob1_df$vec_char)
-mean(as.numeric(Prob1_df$vec_char))
-class(as.numeric(Prob1_df$vec_char))
-```
-And the vec_char has been explicitly changed into numerical value that could take mean as "NA", and could be changed into a factor variable
-
-Converting factor variable from factor to character to numeric:
-```{r}
-as.character(Prob1_df$vec_factor)
-as.numeric(Prob1_df$vec_factor)
-mean(as.numeric(Prob1_df$vec_factor))
-class(as.numeric(Prob1_df$vec_factor))
-```
-And the vec_factor has been explictly changed into numerical value based on "T" or "F" and could take mean as "1.5", and it could be changed into a factor variable
-
-
-
-# Problem 2
 
 
 
