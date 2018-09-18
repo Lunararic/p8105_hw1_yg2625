@@ -71,6 +71,4 @@ class(as.numeric(Prob1_df$vec_factor))
 And the vec_factor has been explictly changed into numerical value based on "T" or "F" and could take mean as "1.5", and it could be changed into a factor variable
 
 
-
-
-
+# Problem 2
