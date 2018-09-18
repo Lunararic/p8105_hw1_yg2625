@@ -8,16 +8,17 @@ output: github_document
 I'm an R Markdown document! 
 
 # Library
-```{r}
+```{r, message = FALSE}
 library(tidyverse)
 ```
 
-# Problem 1
+## Problem 1
 
+### Creating data frame
 Here's a random sample of size 10 from a uniform[0,5] distribution,
 and I created logical vector, character vector and factor vector as required.
 
-Creating data frame
+
 ```{r}
 Prob1_df = tibble(
   vec_numeric = runif(10, min = 0, max = 5),
@@ -42,11 +43,21 @@ length(Prob1_df$vec_char)
 length(Prob1_df$vec_factor)
 ```
 
+
+### Take means
+```{r}
+mean(Prob1_df$vec_numeric)
+mean(Prob1_df$vec_logical)
+mean(Prob1_df$vec_char)
+mean(Prob1_df$vec_factor)
+```
 When taking the mean of each variable, only vec_numeric works since it's the only numerical variable that could have take mean while vec_logical are logical values, vec_char are character values and vec_factor are factors values that can't take means.
 
-Transforming the varialbe type:
+
+### Transforming variable type
+Transforming the variable type:
 Tranfoming to numerical variable:
-```{r}, eval = False
+```{r, message = FALSE, warning = FALSE, results = 'hide'}
 as.numeric(Prob1_df$vec_logical)
 as.numeric(Prob1_df$vec_char)
 as.numeric(Prob1_df$vec_factor)
