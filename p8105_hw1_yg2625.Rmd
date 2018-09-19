@@ -98,20 +98,26 @@ The size of the dataset is `r nrow(Prob2_df)`, the mean of x is `r mean(Prob2_df
 
 ## Make scatterplots
 
-First Scatterplot
+First Scatterplot making color points using the logical variable
 ```{r}
 ggplot(Prob2_df, aes(x = Prob2_df$x, y = Prob2_df$y, color = vec_logical)) + geom_point()
 ```
 
-Second Scatterplot
+Second Scatterplot making color points using the numeric variable
 ```{r}
 ggplot(Prob2_df, aes(x = Prob2_df$x, y = Prob2_df$y, color = vec_numeric)) + geom_point()
 ```
 
-Third Scatterplot
+Third Scatterplot making color points using the factor variable
 ```{r}
 ggplot(Prob2_df, aes(x = Prob2_df$x, y = Prob2_df$y, color = vec_factor)) + geom_point()
 ```
+
+## Export first scatterplot to current project directory
+```{r}
+ggsave("1st_scatterplot.png", plot = ggplot(Prob2_df, aes(x = Prob2_df$x, y = Prob2_df$y, color = vec_logical)) + geom_point())
+```
+
 
 
 
