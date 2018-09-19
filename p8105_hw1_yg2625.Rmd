@@ -94,7 +94,7 @@ Prob2_df = tibble(
 )
 ```
 
-The size of the dataset is `r nrow(Prob2_df)`, the mean of x is `r mean(Prob2_df$x)`, the median of x is `r median(Prob2_df$x)`, and the proportion of cases for which the logical vector is TRUE is `r table(Prob2_df$vec_logical)["TRUE"]`.
+The size of the dataset is `r nrow(Prob2_df)`, the mean of x is `r mean(Prob2_df$x)`, the median of x is `r median(Prob2_df$x)`, and the proportion of cases for which the logical vector is TRUE is `r table(Prob2_df$vec_logical)["TRUE"]/nrow(Prob2_df)`.
 
 ## Make scatterplots
 
@@ -102,18 +102,23 @@ First Scatterplot making color points using the logical variable
 ```{r}
 ggplot(Prob2_df, aes(x = Prob2_df$x, y = Prob2_df$y, color = vec_logical)) + geom_point()
 ```
+From the scatterplot, we could see almost 50% of the logcial variables datapoints lie as True and 50% lie as False. The real proportion of True and False could be calculated by R.
 
 Second Scatterplot making color points using the numeric variable
 ```{r}
 ggplot(Prob2_df, aes(x = Prob2_df$x, y = Prob2_df$y, color = vec_numeric)) + geom_point()
 ```
+From the scatterplot, we could see almost 50% of the numerical variables datapoints lie as True and 50% lie as False. The real proportion of True and False could be calculated by R.
+
 
 Third Scatterplot making color points using the factor variable
 ```{r}
 ggplot(Prob2_df, aes(x = Prob2_df$x, y = Prob2_df$y, color = vec_factor)) + geom_point()
 ```
+From the scatterplot, we could see almost 50% of the factor variables datapoints lie as True and 50% lie as False. The real proportion of True and False could be calculated by R.
 
-## Export first scatterplot to current project directory
+
+## Export first scatterplot
 ```{r}
 ggsave("1st_scatterplot.png", plot = ggplot(Prob2_df, aes(x = Prob2_df$x, y = Prob2_df$y, color = vec_logical)) + geom_point())
 ```
