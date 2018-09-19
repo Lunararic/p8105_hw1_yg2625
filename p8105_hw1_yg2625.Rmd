@@ -96,5 +96,24 @@ Prob2_df = tibble(
 
 The size of the dataset is `r nrow(Prob2_df)`, the mean of x is `r mean(Prob2_df$x)`, the median of x is `r median(Prob2_df$x)`, and the proportion of cases for which the logical vector is TRUE is `r table(Prob2_df$vec_logical)["TRUE"]`.
 
+## Make scatterplots
+
+First Scatterplot
+```{r}
+ggplot(Prob2_df, aes(x = Prob2_df$x, y = Prob2_df$y, color = vec_logical)) + geom_point()
+```
+
+Second Scatterplot
+```{r}
+ggplot(Prob2_df, aes(x = Prob2_df$x, y = Prob2_df$y, color = vec_numeric)) + geom_point()
+```
+
+Third Scatterplot
+```{r}
+ggplot(Prob2_df, aes(x = Prob2_df$x, y = Prob2_df$y, color = vec_factor)) + geom_point()
+```
+
+
+
 
 
