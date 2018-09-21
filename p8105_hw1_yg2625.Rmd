@@ -95,7 +95,7 @@ Prob2_df = tibble(
 )
 ```
 
-The size of the dataset is `r nrow(Prob2_df)`, the mean of x is `r mean(Prob2_df$x)`, the median of x is `r median(Prob2_df$x)`, and the proportion of cases for which the logical vector is TRUE is `r table(Prob2_df$vec_logical)["TRUE"]/nrow(Prob2_df)`.
+The size of the dataset is `r nrow(Prob2_df)` rows and `r ncol(Prob2_df)` columns, the mean of x is `r mean(Prob2_df$x)`, the median of x is `r median(Prob2_df$x)`, and the proportion of cases for which the logical vector is TRUE is `r table(Prob2_df$vec_logical)["TRUE"]/nrow(Prob2_df)`.
 
 ## Make scatterplots
 
